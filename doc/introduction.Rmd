@@ -1,0 +1,21 @@
+# Introduction {#intro}
+Urban open space has a huge impact on human health, well-being and urban ecosystems. One of the open spaces where the environmental and ecological challenges of cities manifest the most is the urban riverfront, often characterised by fragmented land use, lack of accessibility, heavy riverside vehicular traffic, and extreme degradation of river hydrology and ecology. More often than not, the current spatial design of the riverfront hinders rather than supports the delivery of ecosystem services and, in consequence, its potential to improve the health and well-being of urban inhabitants is diminished. Hence, the design of riverside open spaces is crucial. Urban and landscape design in those spaces requires instruments that can aid designers, planners, decision-makers and stakeholders in devising spatial interventions that integrate complex environmental and ecological goals in high quality public space design.
+
+By recognising the multiple environmental and ecological benefits of green space and water in the city, the **I-SURF** project applies a set of four design instruments, namely *the Connector*, *the Sponge*, *the Integrator*, and *the Scaler*. **I-SURF** is a three-phased project that tests, validates and updates these instruments through a design-driven research methodology involving two design workshops and expert meetings addressing three different riverside urban spaces in Amsterdam: in the Ij waterfront, along River Amstel, and on a site located on the canal network. The project concludes with an updated and transferrable instrument set available for urban and landscape design applications in Amsterdam and in other Dutch cities crossed by rivers.
+
+![Overall diagram of the four design instruments (see legend in the bottom right), representing procedures that applies the transdisciplinary knowledge on urban rivers in the design process. Source: Forgaci, 2018.](figs/instruments-horizontal.jpg)
+
+The project "Instruments for sustainable urban riverfronts" (I-SURF) builds on a set of spatial design instruments developed previously by Claudiu Forgaci -@Forgaci2018 through a transdisciplinary literature review covering environmental-ecological, social-economic, planning-governance and spatial-morphological knowledge on urban rivers, and a research methodology involving design explorations through real-world urban river design projects and design testing through an international design workshop on the river corridors of Bucharest, Romania. The instrument set, comprising the Connector, the Sponge, the Integrator, and the Scaler (Figure 1), represents practical procedures that urban and landscape designers can apply in the design process, as follows:
+
+* **The Connector** is used to reveal and reconfigure the elements of the traffic network (e.g. downgraded riverside traffic), water network (e.g. restored meanders) and ecological network (e.g. restored green corridor) so that the accessibility and ecological connectivity of the riverfront is improved.
+* **The Sponge** is used to create an inventory of riverside open spaces and amenities and, based on that inventory, to identify potentials of increased spatial capacity and attractiveness in the elements of public space (e.g. riverside pedestrian spaces), green space (e.g. renaturalised riverbanks) and water space (e.g. floodable riverbanks).
+* **The Integrator** is used to identify spatial conflicts and synergies between the elements identified with the Connector and the Sponge.
+* **The Scaler** is used to reflect on the scales of the design and to reveal interdependencies across spatial scales and dependencies across temporal scales.
+
+
+## Research questions
+
+1. Did the instruments introduced in the workshop improve the ability of the participants to design in a social-ecologically integrated way?  
+    * Is there *a significant difference* between the sketches drawn before the workshop and the projects developed with the instruments introduced in the workshop?
+
+2. Does the use of the instruments produce *results that are significant for the design practice*?

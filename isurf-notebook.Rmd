@@ -1,0 +1,297 @@
+---
+title: "I-SURF - Instruments for Sustainable Urban Riverfronts"
+subtitle: "Final project report"⁄
+author:
+  - name: "Claudiu Forgaci"
+    affiliation: Delft University of Technology
+    corresponding: yes  # Define only one corresponding author
+    url: ""
+date: "`r format(Sys.Date(), '%B %d, %Y')`"
+thanks: ""
+abstract: ""
+keywords: "urban rivers, urban design, Amsterdam"
+bibliography: bibliography.bib
+csl: apa.csl
+output:
+  html_notebook:
+    theme: united
+#    highlight: textmate
+    toc: true
+    toc_depth: 2
+    toc_float: true
+#      collapsed: false
+#      smooth_scroll: true
+    number_sections: true
+#    css: style.css
+    fig_caption: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, 
+                      fig.path = "figs",
+                      fig.align = "center",
+                      fig.width = 4, 
+                      fig.height = 4, 
+                      dev = "png",
+                      cache = TRUE)
+```
+
+```{r load-packages, echo = FALSE}
+library(dplyr)  # Manipulate data
+library(tidyr)  # Create tidy data
+library(readr)  # Read rectangular data
+library(kableExtra)  # Build common complex tables and manipulate table styles
+library(qualtRics)  # Load Qualtrics survey data
+library(ggplot2)  # Visualise data
+```
+
+```{r read-workshop-data, echo = FALSE}
+# Load sites
+site <- read.csv("./data/sites.csv")
+
+# Load participants
+part <- read.csv("./data/participants.csv")
+part <- part[c(1:3, 5:6, 8)] # Select only columns that are relevant for analysis
+
+# Load projects data
+proj <- read.csv("./data/projects.csv")
+stan_proj <- read.csv("./data/standardised-projects.csv") # Load summary table of standardised projects
+stan_sket <- read.csv("./data/standardised-sketches.csv") # Load summary table of standardised sketches
+actn <- read.csv("./data/standardised-actions.csv") # Load table with actions included in standardised maps
+
+indx_green <- grepl("green", colnames(actn))
+actn_green <- actn[, indx_green]
+
+indx_urban <- grepl("urban", colnames(actn))
+actn_urban <- actn[, indx_urban]
+
+indx_water <- grepl("water", colnames(actn))
+actn_water <- actn[, indx_water]
+
+indx_conn <- grepl("connections", colnames(actn))
+actn_conn <- actn[, indx_conn]
+```
+
+```{r read-expert-data, echo = FALSE}
+survey <- read_survey("data/I-SURF+-+expert+evaluation_August+27,+2020_11.45.zip")
+paste("The raw data has", nrow(survey), "responses.")
+```
+
+# Introduction {#intro}
+```{r introduction, child="doc/introduction.md"}
+```
+
+# Methods {#methods}
+## Research design
+<!-- The rationale for the mixed methods design:
+- provide a basic definition of mixed methods research
+- what are the reasons for using both quan and qual data? -->
+
+- "it involves the collection [and analysis] of both qualitative (open-ended) and quantitative (closed-ended) data in response to research questions and hypothesis" [@Creswell2014, p. 217]
+
+- mention alternative terms used for this approach
+
+- brief background of mixed methods
+
+- mention "the importance or rise of mixed methods today"
+
+- the rationale of choosing this approach is that it minimizes the limitations of both qual and quan approaches
+
+  - at a general, practical and procedural level
+  
+  - at a procedural level, it can be employed, for instance, to:
+    
+    - comparing different quan qual prespectives
+    - explaining quan with qual follow-up
+    - developing better measurement instruments by collecting qual information first
+    - understanding the results of experiments by incorporating the perspectives of individuals
+    - reach a more complete understanding of the (social) phenomenon of study
+    - better understanding of the impact of an intervention
+
+- see Creswell [-@Creswell2014, pp. 216-9] and check wording of the above to avoid plagiarism
+
+<!-- The type of mixed methods design used:
+- what are the citeria for choosing the mixed-methods design?
+- what mixed methods design is used?
+- is the design represented in a visual model?
+- is the proper notation used in the visual model? -->
+
+- indicate the chosen design [or a new design?!]
+
+- include a diagram
+
+- what challenges does this design impose to the inquirer?
+  - extensive data collection
+  - time-intensive comb of quan and qual
+  - the researcher needs to be familiar with both forms of research
+  - clear visual models are needed to explain the complexity of the design (details, flow of activities)
+
+<!-- The design:
+- what is the relation between the chosen design and data collection/analysis procedures?
+- what sampling strategy was used for both procedures?
+- what specific data analysis procedures were used?
+- what procedures of validation were used for the design and the quan/qual research?
+- relate the narrative structure of the text/report to thetype of mixed methods design -->
+
+
+- The I-SURF workshop was set up as an experiment with a *repeated-measures design* [@Field2012] in which data was collected in two conditions on the same participants: before and after the introduction of the I-SURF instruments. With this design [@Field2012], two kinds of differences between thee two conditions were considered: (1) the influence of the different treatments that the participants were exposed to and (2) other factors that might have affected the differences in outcome from one time to next (e.g. individual vs. group work). The advantage of a *repeated-measures design* carried out within the same group of participants at different times over an *independent-measures design* carried out between groups of participants is that the error variation is smaller: in the former unsystematic variation is only caused by differences in the behaviour of a participant at different times, whereas in the latter unsystematic variation can be caused by innate ability. The disadvantage is that the participants are familiar with the task and thus can show *practice effects*, that is, perform better as they have ... 
+
+Other advantages... giving the chance to all participants to use the instruments...
+
+## Research questions
+
+The success of the insturment set lies in a number of performance targets:
+
+1. **Usability** of the instruments;
+2. **Effectiveness** in achieving the design goals; and
+3. **Usefulness** for practice - 
+4. **Level of engagement** - how engaging are the instruments?
+5. **Ease of learning** - how easy it is to understand whot the instruments do and how they can be used
+6. **Efficiency** - how quickly can the design goals be achieved?
+7. **Efficacy** - do the instruments produce the intended results or are there any other confounding variables involved?
+8. **Ethics** - ethical issues?
+
+Efficacy, effectiveness, efficiency, and ethics [@Venable2012]
+
+
+
+Correspondingly, the I-SURF project addresses the following research questions:
+
+RQ1. How usable are the instruments?
+
+RQ2. To what extent do the instruments aid the designer in achieving the design goal?
+
+RQ3. How useful are the instrument sets for the practice of urban design?
+
+MRQ: Do the design instruments introduced in the workshop
+
+1. Did the instruments introduced in the workshop improve the ability of the participants to design in a social-ecologically integrated way? 
+
+  * Internal evaluation (QUAL): To what extent do the participants *feel* that they are better equipped to design social-ecologically integrated urban riverfronts?
+
+  * External evaluation (QUAN): Is there *a significant difference* between the sketches drawn before the workshop and the projects developed with the instruments introduced in the workshop?
+  
+2. Does the use of the instruments produce *results that are significant for the design practice*?
+
+## Data collection
+
+### Workshop 
+
+Data: pre-workshop sketches
+- Type: QUAL
+- Instrument: A4 sketch
+
+Data: projects
+- 
+
+
+### Selection of participants
+The design workshop had `r nrow(part)` participants, divided into 4 groups of 3 for each of the 3 sites.
+
+```{r participants-frequency}
+# Create frequency table of types of workshop participants
+part_type_freq <- table(part$experience)
+names(part_type_freq) = c("Master student", "PhD candidate", "Post-master student", "Young professional")
+part_type_freq_df <- as.data.frame(part_type_freq)
+names(part_type_freq_df) = c("Type of participant", "Count")
+# part_type_freq_df
+kable(part_type_freq_df, caption = "Number of selected workshop participants based on their level of experience", format = "html") %>%
+  kable_styling(bootstrap_options = "striped", full_width = F)
+```
+
+```{r stan-count}
+# Display first rows of stan_sket and stan_proj
+head(stan_sket)
+head(stan_proj)
+
+# Summarise standardised sketches and projects in the data frame 'stan'
+stan <- stan_sket %>%
+  full_join(stan_proj, by = c("site_id", "stan_id")) %>%
+  left_join(site, by = "site_id") %>%
+  group_by("Site id" = site_id, "Site name" = site_name) %>%
+  count("Sketch" = !is.na(proj_id), name = "Count_sketches") %>%
+  spread("Sketch", "Count_sketches") %>%
+  select("Site name", "Sketch count" = "FALSE", "Project count" = "TRUE")
+
+# Make totals row !!! I still don't know how to bind this to the other table
+totals <- c(NA, NA, colSums(stan[, 3]), colSums(stan[, 4]))
+
+# Display table
+kable(stan, caption = "Number of standardised individual sketches and projects per site", format = "html") %>%
+  kable_styling(bootstrap_options = "striped", full_width = F)
+```
+
+### Online survey
+
+- (self-administered) web survey
+- Measures taken to improve response rate
+  - cover letter personalised and stating the purpose and importance of the survey, why the respondent was selected, details about sponsorship, guarantees of confidentiality
+  - follow-up invitations
+  - balanced length, clear instructions, attractive layout, also checked with piloting
+  - minimised use of open-ended questions
+
+- quality of responses and removing biases
+  - making use of the advantages of an online survey over an offline survey
+  - to avoid acquiescence, some statements were scores were reversed in likert scale questions [is this the case?]
+  - in multiple-choice questions distracted items were added [is this the case?]
+  - questions were randomised
+  - in the comparison of standardised sketches with standardised group projects:
+    - the display of the two items in each pair was randomised to avoid the respondents identifying the pattern of difference between items on the left and items on the right
+    - the order in which the pairs were displayed was randomised^[The *Randomiser* option in Qualtrics was used to display the question blocks in random order.], to avoid  poorer responses on later comparisons due to respondent fatigue
+  - metadata was recorded
+  - response time was recorded for each page to check if respondents tended to spend less attention to later questions in the comparison block
+  - expert sampling
+    - define what makes selected participants experts... the selected experts should "have demonstrable experience and expertise in a particular area of study interest" (Singh, 2007, p. 108) ^[not necessarily the best reference]
+    - combine with snowball sampling 
+
+Response rate:
+
+
+## Data analysis
+
+### Pairwise comparison
+```{r survey-pairings, echo = FALSE}
+# Calculate the total nomber of pairings displayed in the survey
+comb <- data.frame()
+for (i in 1:4) {
+  for (j in 1:4) {
+    comb <- rbind(comb, c(i, j))
+  }
+}
+print(comb)
+print(paste("The total number of pairings to be displayed in the survey is", nrow(comb)))
+```
+
+Pairwise comparison is a
+
+## Data interpretation and validation / Quality criteria
+
+## Potential ethical issues
+
+# Results {#results}
+
+
+
+
+# Discussion {#discussion}
+```{r discussion-text, child = "doc/discussion.Rmd"}
+```
+
+# Notes {- #notes}
+
+```{js, echo=FALSE}
+$(document).ready(function() {
+  $('.footnotes ol').appendTo('#notes');
+  $('.footnotes').remove();
+});
+```
+
+# References {-}
+
+<div id="refs"></div>
+
+# Appendices {-}
+
+## Appendix A {- #app-a}
+
+## Appendix B {- #app-b}
